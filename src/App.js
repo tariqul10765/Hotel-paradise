@@ -1,11 +1,10 @@
 import './App.css';
-import { Button } from 'react-bootstrap';
+import Home from './pages/home/home/Home';
 
 function App() {
   return (
     <div className="App">
-      <Button variant="primary">Primary</Button>{' '}
-      <i class="fab fa-facebook"></i>
+      <Home></Home>
     </div>
   );
 }
