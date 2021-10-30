@@ -1,5 +1,7 @@
 import React from 'react';
+import FavouriteRooms from '../favourite-rooms/FavouriteRooms';
 import Slider from '../slider/Slider';
+import SpecialStaff from '../special-staff/SpecialStaff';
 import Welcome from '../welcome/Welcome';
 
 const Home = () => {
@@ -7,6 +9,8 @@ const Home = () => {
         <div>
             <Slider></Slider>
             <Welcome></Welcome>
+            <FavouriteRooms></FavouriteRooms>
+            <SpecialStaff></SpecialStaff>
         </div>
     );
 };

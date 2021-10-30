@@ -1,0 +1,7 @@
+.staffs{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.staffs img{
+    width: 100%;
+}

@@ -1,0 +1,13 @@
+.google__icon{
+    font-size: 20px;
+    color: orange;
+}
+.facebook__icon{
+    font-size: 20px;
+    color: skyblue;
+}
+.signin__methods{
+    margin: 10px 0px;
+    display: flex;
+    gap: 20px;
+}
