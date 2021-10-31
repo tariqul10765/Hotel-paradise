@@ -36,7 +36,7 @@ const Header = () => {
                                                 aria-expanded="false"
                                             >
                                                 {
-                                                    user.photoUrl
+                                                    user.photoURL
                                                         ?
                                                         <img
                                                             src={user.photoURL}

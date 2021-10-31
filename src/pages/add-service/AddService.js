@@ -1,5 +1,5 @@
-import React from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Form, Button, Modal } from 'react-bootstrap';
 import { Controller, useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
 
@@ -7,7 +7,11 @@ const AddService = () => {
     const { control, handleSubmit, reset } = useForm();
     const { user } = useAuth();
 
+    const [show, setShow] = useState(false);
 
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     const onSubmit = data => {
 
         console.log(data);
@@ -19,6 +23,8 @@ const AddService = () => {
             },
             body: JSON.stringify(data)
         })
+
+        setShow(false);
         reset();
     }
 
@@ -94,7 +100,19 @@ const AddService = () => {
                                 )
                             }}
                         />
-                        <Button variant="primary" type='submit'>Add Service</Button>
+                        <Button variant="primary" onClick={handleShow}>
+                            Add Service
+                        </Button>
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                                <Button variant="primary" onClick={handleSubmit(onSubmit)}>
+                                    Confirm
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
                     </form>
             }
         </div>
