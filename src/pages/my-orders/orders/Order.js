@@ -32,7 +32,6 @@ const Order = ({ userOrder, handleDelete, children }) => {
             }
             <td>{roomType}</td>
             <td>{price}</td>
-            <td>12-05-2020</td>
             <td>{isPending}</td>
             <td>
                 <div className='actions'>

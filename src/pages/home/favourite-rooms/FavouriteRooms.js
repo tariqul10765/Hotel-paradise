@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import Slider from "react-slick";
 import Room from '../room/Room';
 import './FavouriteRooms.css';
 
 const FavouriteRooms = () => {
-    const [rooms, setRooms] = useState([]);
+    const [rooms, setRooms] = useState(null);
 
     useEffect(() => {
         const url = `${process.env.REACT_APP_API_URL}/rooms/room-list`;
@@ -51,12 +52,20 @@ const FavouriteRooms = () => {
     };
     return (
         <div>
-            <h2 className='text-center mb-5'>OUR FAVOURITE ROOMS</h2>
-            <Slider {...settings} className='favourite__room__container'>
-                {
-                    rooms.map(room => <Room room={room}></Room>)
-                }
-            </Slider>
+            {
+                rooms
+                    ?
+                    <div>
+                        <h2 className='text-center mb-5'>OUR FAVOURITE ROOMS</h2>
+                        <Slider {...settings} className='favourite__room__container'>
+                            {
+                                rooms.map(room => <Room room={room}></Room>)
+                            }
+                        </Slider>
+                    </div>
+                    :
+                    <Spinner animation="border" variant="primary" />
+            }
         </div>
     );
 };

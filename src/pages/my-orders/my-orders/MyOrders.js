@@ -44,7 +44,6 @@ const MyOrders = () => {
                             <th>#</th>
                             <th>Room Type</th>
                             <th>Rent</th>
-                            <th>Date</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>

@@ -42,7 +42,6 @@ const ManageOrders = () => {
                             <th>User Name</th>
                             <th>Room Type</th>
                             <th>Rent</th>
-                            <th>Date</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>
