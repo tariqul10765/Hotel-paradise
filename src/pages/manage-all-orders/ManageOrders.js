@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Modal, Table, Button } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 import Order from '../my-orders/orders/Order';
 
@@ -16,12 +16,11 @@ const ManageOrders = () => {
     }, [user.uid]);
 
     const handleDelete = order => {
-        // console.log(order, myOrders);
+
         const afterDelete = manageOrders.filter(manageOrder => manageOrder._id !== order._id);
-        console.log(afterDelete)
+
         setManageOrders(afterDelete);
         const url = `${process.env.REACT_APP_API_URL}/orders/delete-order/${order._id}`;
-        console.log('handleDelete', url);
 
         fetch(url, {
             method: 'DELETE',

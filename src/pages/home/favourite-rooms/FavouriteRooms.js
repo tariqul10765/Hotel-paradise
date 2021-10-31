@@ -9,7 +9,7 @@ const FavouriteRooms = () => {
 
     useEffect(() => {
         const url = `${process.env.REACT_APP_API_URL}/rooms/room-list`;
-        console.log(url);
+
         fetch(url)
             .then(res => res.json())
             .then(json => setRooms(json.data))

@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 const Header = () => {
 
     const { user, userSignOut } = useAuth();
-    console.log(user);
 
     return (
         <div>

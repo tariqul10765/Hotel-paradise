@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './MyOrders.css';
-import { Modal, Table, Button } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import Order from '../orders/Order';
 
@@ -10,7 +10,6 @@ const MyOrders = () => {
 
     useEffect(() => {
         const url = `${process.env.REACT_APP_API_URL}/orders/order-list/${user.uid}`;
-        console.log(url);
 
         fetch(url)
             .then(res => res.json())
@@ -18,12 +17,11 @@ const MyOrders = () => {
     }, [user.uid]);
 
     const handleDelete = order => {
-        console.log(order);
+
         const afterDelete = myOrders.filter(myOrder => myOrder._id !== order._id);
-        console.log(afterDelete)
+
         setMyOrders(afterDelete);
         const url = `${process.env.REACT_APP_API_URL}/orders/delete-order/${order._id}`;
-        console.log('handleDelete', url);
 
         fetch(url, {
             method: 'DELETE',

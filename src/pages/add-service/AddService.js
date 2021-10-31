@@ -14,7 +14,6 @@ const AddService = () => {
     const handleShow = () => setShow(true);
     const onSubmit = data => {
 
-        console.log(data);
         const url = `${process.env.REACT_APP_API_URL}/rooms/add-room`;
         fetch(url, {
             method: 'POST',

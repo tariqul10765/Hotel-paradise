@@ -4,7 +4,7 @@ import './Room.css';
 
 const Room = ({ room }) => {
     const { _id, title, description, price, imgUrl } = room;
-    console.log(imgUrl);
+
     return (
         <div>
             <div className='slider__item'>

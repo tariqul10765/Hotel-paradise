@@ -24,7 +24,6 @@ const Login = () => {
 
     const onSubmit = data => {
 
-        console.log(data);
         emailPassSignIn(data.email, data.password)
             .then(result => {
                 updateUserProfile('tariqul');

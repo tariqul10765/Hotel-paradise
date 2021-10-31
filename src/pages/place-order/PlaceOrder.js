@@ -32,7 +32,6 @@ const PlaceOrder = () => {
         const status = 'pending';
 
         const orderData = { ...data, uId, roomType, imgUrl, price, status }
-        console.log(orderData);
 
         const url = `${process.env.REACT_APP_API_URL}/orders/add-order`;
         fetch(url, {
