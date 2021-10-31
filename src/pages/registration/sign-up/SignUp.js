@@ -1,6 +1,7 @@
 import React from 'react';
 import './SignUp.css';
 import { Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     return (
@@ -29,11 +30,11 @@ const SignUp = () => {
                 <span>
                     <strong>Sign Up With</strong>
                 </span>
-                <i class="fab fa-google google__icon"></i>
+                <i className="fab fa-google google__icon"></i>
             </div>
 
-            <h6>Already have an account? <a href="/">sign In</a></h6>
-        </div>
+            <h6>Already have an account? <Link to="/login">sign In</Link></h6>
+        </div >
     );
 };
 

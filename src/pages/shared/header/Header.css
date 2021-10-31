@@ -1,3 +1,15 @@
 .collapse a{
     color: white;
 }
+
+.user__profile{
+    display: flex;
+    margin-right: 20px;
+}
+.user__photo{
+    /* margin-left: 10px; */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid blueviolet;
+}

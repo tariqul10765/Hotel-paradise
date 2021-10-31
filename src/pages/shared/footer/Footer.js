@@ -11,20 +11,20 @@ const Footer = () => {
             <Container>
                 <Row>
                     <Col md='8'>
-                        <p>© 2021 - LIBRA Diagnostics Center Limited. All rights reserved
+                        <p>© 2021 - LIBRA Diagnostics Center Limited.All rights reserved
                             Powered by LIBRA</p>
                     </Col>
                     <Col md='4' className='text-center'>
                         <div className='d-flex gap-3 justify-content-center'>
-                            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-                            <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/"><i className="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com/"><i className="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a>
                         </div>
-                    </Col>
-                </Row>
-            </Container>
+                    </Col >
+                </Row >
+            </Container >
 
-        </div>
+        </div >
     );
 };
 

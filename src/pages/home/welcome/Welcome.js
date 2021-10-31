@@ -8,8 +8,10 @@ const Welcome = () => {
             <Container>
                 <Row>
                     <Col className='welcome__des'>
-                        <h2>Welcome To Hotel Paradise</h2>
-                        <p>Picklu luptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius Picklu luptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem</p>
+                        <h2>WELCOME TO HOTEL PARADISE</h2>
+                        <p>We have taken all the nescessary steps in order to guarantee you a save business and leisure trip.</p>
+
+                        <p>We can also still welcome our conference guests thanks to our vaste meeting rooms. Simply tell us the number of participants and we will get you the right location with enough space between each of the participants.</p>
                         <Button variant="outline-secondary">Explore</Button>
                     </Col>
                     <Col className='welcome__img'>
@@ -17,7 +19,7 @@ const Welcome = () => {
                     </Col>
                 </Row>
             </Container>
-        </div>
+        </div >
     );
 };
 

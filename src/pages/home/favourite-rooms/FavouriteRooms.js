@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
+import Room from '../room/Room';
 import './FavouriteRooms.css';
 
 const FavouriteRooms = () => {
+    const [rooms, setRooms] = useState([]);
+
+    useEffect(() => {
+        const url = `${process.env.REACT_APP_API_URL}/rooms/room-list`;
+        console.log(url);
+        fetch(url)
+            .then(res => res.json())
+            .then(json => setRooms(json.data))
+
+    }, [])
     const settings = {
         dots: true,
         lazyLoad: true,
@@ -10,7 +21,7 @@ const FavouriteRooms = () => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        initialSlide: 2,
+        initialSlide: 0,
         responsive: [
             {
                 breakpoint: 1024,
@@ -40,98 +51,11 @@ const FavouriteRooms = () => {
     };
     return (
         <div>
-            <h2 className='text-center mb-5'>Our Favourite Rooms</h2>
+            <h2 className='text-center mb-5'>OUR FAVOURITE ROOMS</h2>
             <Slider {...settings} className='favourite__room__container'>
-                <div className='slider__item'>
-                    <img src="https://template.hasthemes.com/picklu/picklu/img/room/room2.jpg" alt='' />
-                    <div className='about__room'>
-                        <h5>Double Room</h5>
-                        <p>Our stunning shoe collection is crafted from the finest leathers and super-soft suede's. You’ll find a style for you in these new arrivals to the L.K.Bennett shoe collection.</p>
-
-                        <div>
-                            <span>$180</span>
-                            <span>/ night</span>
-                        </div>
-                        <div className="shop__btn">
-                            <a href="/">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div className='slider__item'>
-                    <img src="https://template.hasthemes.com/picklu/picklu/img/room/room3.jpg" alt='' />
-                    <div className='about__room'>
-                        <h5>Double Room</h5>
-                        <p>Our stunning shoe collection is crafted from the finest leathers and super-soft suede's. You’ll find a style for you in these new arrivals to the L.K.Bennett shoe collection.</p>
-
-                        <div>
-                            <span>$180</span>
-                            <span>/ night</span>
-                        </div>
-                        <div className="shop__btn">
-                            <a href="/">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div className='slider__item'>
-                    <img src="https://template.hasthemes.com/picklu/picklu/img/room/room4.jpg" alt='' />
-                    <div className='about__room'>
-                        <h5>Double Room</h5>
-                        <p>Our stunning shoe collection is crafted from the finest leathers and super-soft suede's. You’ll find a style for you in these new arrivals to the L.K.Bennett shoe collection.</p>
-
-                        <div>
-                            <span>$180</span>
-                            <span>/ night</span>
-                        </div>
-                        <div className="shop__btn">
-                            <a href="/">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div className='slider__item'>
-                    <img src="https://template.hasthemes.com/picklu/picklu/img/room/room2.jpg" alt='' />
-                    <div className='about__room'>
-                        <h5>Double Room</h5>
-                        <p>Our stunning shoe collection is crafted from the finest leathers and super-soft suede's. You’ll find a style for you in these new arrivals to the L.K.Bennett shoe collection.</p>
-
-                        <div>
-                            <span>$180</span>
-                            <span>/ night</span>
-                        </div>
-                        <div className="shop__btn">
-                            <a href="/">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div className='slider__item'>
-                    <img src="https://template.hasthemes.com/picklu/picklu/img/room/room3.jpg" alt='' />
-                    <div className='about__room'>
-                        <h5>Double Room</h5>
-                        <p>Our stunning shoe collection is crafted from the finest leathers and super-soft suede's. You’ll find a style for you in these new arrivals to the L.K.Bennett shoe collection.</p>
-
-                        <div>
-                            <span>$180</span>
-                            <span>/ night</span>
-                        </div>
-                        <div className="shop__btn">
-                            <a href="/">Book now</a>
-                        </div>
-                    </div>
-                </div>
-                <div className='slider__item'>
-                    <img src="https://template.hasthemes.com/picklu/picklu/img/room/room4.jpg" alt='' />
-                    <div className='about__room'>
-                        <h5>Double Room</h5>
-                        <p>Our stunning shoe collection is crafted from the finest leathers and super-soft suede's. You’ll find a style for you in these new arrivals to the L.K.Bennett shoe collection.</p>
-
-                        <div>
-                            <span>$180</span>
-                            <span>/ night</span>
-                        </div>
-                        <div className="shop__btn">
-                            <a href="/">Book now</a>
-                        </div>
-                    </div>
-                </div>
+                {
+                    rooms.map(room => <Room room={room}></Room>)
+                }
             </Slider>
         </div>
     );

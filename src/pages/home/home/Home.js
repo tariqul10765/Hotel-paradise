@@ -6,7 +6,7 @@ import Welcome from '../welcome/Welcome';
 
 const Home = () => {
     return (
-        <div>
+        <div className='mw-100'>
             <Slider></Slider>
             <Welcome></Welcome>
             <FavouriteRooms></FavouriteRooms>

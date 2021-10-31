@@ -1,7 +1,13 @@
+.special__staff__container{
+    width: 100%;
+}
 .staffs{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+}
+.staff{
+    padding: 0;
 }
 .staffs img{
+    padding: 0;
     width: 100%;
 }
